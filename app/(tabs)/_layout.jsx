@@ -1,11 +1,18 @@
 import { Tabs } from 'expo-router';
 
+import { Colors } from '../../constants/colors';
+
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors.primary,
+        tabBarInactiveTintColor: Colors.text.secondary.light,
+        tabBarStyle: { borderTopColor: Colors.border.light },
+        headerShown: false,
+      }}
+    >
       <Tabs.Screen name="index" options={{ title: 'Home' }} />
-      <Tabs.Screen name="files" options={{ title: 'Files' }} />
-      <Tabs.Screen name="recents" options={{ title: 'Recents' }} />
       <Tabs.Screen name="settings" options={{ title: 'Settings' }} />
     </Tabs>
   );
